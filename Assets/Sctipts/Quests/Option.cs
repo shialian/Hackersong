@@ -10,4 +10,12 @@ public class Option : MonoBehaviour
     {
         QuestBoard.Instance.AnswerCheck(questNumber, this);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "GameController")
+        {
+            QuestBoard.Instance.AnswerCheck(questNumber, this);
+        }
+    }
 }

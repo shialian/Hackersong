@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestBoard : MonoBehaviour
 {
     public static QuestBoard Instance { get; private set; }
     public Quest[] quests;
+    public Text text;
+
+    public AudioSource audioSource;
+    public AudioClip correct;
+    public AudioClip incorrect;
 
     private void Start()
     {
@@ -25,11 +31,13 @@ public class QuestBoard : MonoBehaviour
     {
         if(option == quests[questNumber].answer)
         {
-            Debug.Log("Correct");
+            audioSource.PlayOneShot(correct);
+            text.text = "µª¹ïÅo";
         }
         else
         {
-            Debug.Log("Incorrect");
+            audioSource.PlayOneShot(incorrect);
+            text.text = "µª¿ùÅo";
         }
     }
 }

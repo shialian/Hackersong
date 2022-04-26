@@ -8,6 +8,8 @@ public class Quest : MonoBehaviour
     public Option[] options;
     public Option answer;
 
+    
+
     private void Start()
     {
         AssignQuestNumberToOptions();
