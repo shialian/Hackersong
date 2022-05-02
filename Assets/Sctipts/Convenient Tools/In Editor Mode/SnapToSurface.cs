@@ -10,11 +10,14 @@ public class SnapToSurface : MonoBehaviour
         Up,
         Down,
         Left,
-        Right
+        Right,
+        Forward,
+        Backward
     }
     [SerializeField]
     private SnapType snapType = SnapType.Down;
     public Vector3 offset;
+    public bool getCollider;
 
     private void Update()
     {
@@ -32,6 +35,12 @@ public class SnapToSurface : MonoBehaviour
             case SnapType.Right:
                 Snapping(Vector3.right);
                 break;
+            case SnapType.Forward:
+                Snapping(Vector3.forward);
+                break;
+            case SnapType.Backward:
+                Snapping(Vector3.back);
+                break;
         }
     }
 
@@ -41,7 +50,14 @@ public class SnapToSurface : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            transform.position = hit.point + offset;
+            if (hit.collider.tag == "Snap Target")
+            {
+                transform.position = hit.point + offset;
+                if (getCollider)
+                {
+                    Debug.Log(hit.collider);
+                }
+            }
         }
     }
 }
