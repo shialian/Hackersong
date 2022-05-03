@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class LocomotionSwitcher : MonoBehaviour
 {
-    public enum LocomotionType
-    {
-        PC,
-        VR
-    }
-    public LocomotionType type;
+    
     public GameObject pcControllers;
     public GameObject vrControllers;
+    private UserType type;
 
     private void Update()
     {
+        type = GameManager.instance.type;
         Switch();
     }
 
@@ -22,14 +19,14 @@ public class LocomotionSwitcher : MonoBehaviour
     {
         switch (type)
         {
-            case LocomotionType.PC:
+            case UserType.PC:
                 if (pcControllers.activeSelf == false)
                 {
                     pcControllers.SetActive(true);
                     vrControllers.SetActive(false);
                 }
                 break;
-            case LocomotionType.VR:
+            case UserType.VR:
                 if (vrControllers.activeSelf == false)
                 {
                     vrControllers.SetActive(true);

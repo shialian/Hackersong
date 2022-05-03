@@ -17,7 +17,6 @@ using System.Collections;
 /// </summary>
 public class TeleportTransitionBlink : TeleportTransition
 {
-
 	/// <summary>
 	/// How long the transition takes. Usually this is greater than Teleport Delay.
 	/// </summary>
