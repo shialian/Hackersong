@@ -9,9 +9,7 @@ public class Introduction : MonoBehaviour
     public static Introduction Instance { get; private set; }
     private Dictionary<string, string> introductions = new Dictionary<string, string>();
 
-    public Text pcSubTitle;
     public Text vrSubTitle;
-    private Text currentSubTitle;
     private string[] currentText;
     private int textIndex;
     private string[] lines;
@@ -19,22 +17,8 @@ public class Introduction : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        SwitchSubtitle();
         GetIntroductionTexts();
         AddIntroductions();
-    }
-
-    private void SwitchSubtitle()
-    {
-        switch (GameManager.instance.type)
-        {
-            case UserType.PC:
-                currentSubTitle = pcSubTitle;
-                break;
-            case UserType.VR:
-                currentSubTitle = vrSubTitle;
-                break;
-        }
     }
 
     private void GetIntroductionTexts()
@@ -73,32 +57,31 @@ public class Introduction : MonoBehaviour
         currentText = introductions[itemName].Split('¡A','¡F');
         textIndex = 0;
         ChangeSubtitle();
-        SetNextTextIndex(1);
     }
 
     private void Update()
     {
         if(OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {
-            if(textIndex < currentText.Length)
+            if(textIndex < currentText.Length - 1)
             {
-                ChangeSubtitle();
                 SetNextTextIndex(1);
+                ChangeSubtitle();
             }
         }
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch))
         {
-            if (textIndex >= 0)
+            if (textIndex > 0)
             {
-                ChangeSubtitle();
                 SetNextTextIndex(-1);
+                ChangeSubtitle();
             }
         }
     }
 
     private void ChangeSubtitle()
     {
-        currentSubTitle.text = currentText[textIndex];
+        vrSubTitle.text = currentText[textIndex];
     }
 
     private void SetNextTextIndex(int next)
