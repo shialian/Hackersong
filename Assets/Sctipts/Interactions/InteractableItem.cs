@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EPOOutline;
 
 public class InteractableItem : MonoBehaviour
 {
     public string itemName;
     public float viewDistance;
     public Vector3 offset;
+    public Outlinable outline;
     private Vector3 originPosition;
     private Quaternion originRotation;
 
@@ -30,9 +32,16 @@ public class InteractableItem : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        outline = GetComponent<Outlinable>();
+        outline.enabled = false;
+    }
+
     public void OnPointerClick()
     {
         InteractionItemManager.instance.SetLaserBeamActiveState(false);
+        outline.DrawingMode = 0;
         MoveToView();
         Introduction.Instance.ChangeIntroduceItem(itemName);
     }
@@ -41,6 +50,16 @@ public class InteractableItem : MonoBehaviour
     {
         Transform camera = GameManager.instance.vrCamera;
         transform.position = camera.position + viewDistance * camera.forward + offset;
+    }
+
+    public void OnPointerEnter()
+    {
+        outline.enabled = true;
+    }
+
+    public void OnPointerExit()
+    {
+        outline.enabled = false;
     }
 
     public void MoveBack()

@@ -13,6 +13,7 @@ public class Introduction : MonoBehaviour
     private string[] currentText;
     private int textIndex;
     private string[] lines;
+    private string defaultTitle = "請點選茶桌上的茶具";
 
     private void Start()
     {
@@ -61,7 +62,7 @@ public class Introduction : MonoBehaviour
 
     private void Update()
     {
-        if(OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
+        if(OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch) && vrSubTitle.text != defaultTitle)
         {
             if(textIndex < currentText.Length - 1)
             {
@@ -69,7 +70,7 @@ public class Introduction : MonoBehaviour
                 ChangeSubtitle();
             }
         }
-        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch))
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch) && vrSubTitle.text != defaultTitle)
         {
             if (textIndex > 0)
             {
@@ -91,6 +92,6 @@ public class Introduction : MonoBehaviour
 
     public void ResetSubtitle()
     {
-        vrSubTitle.text = "請點選茶桌上的茶具";
+        vrSubTitle.text = defaultTitle;
     }
 }
