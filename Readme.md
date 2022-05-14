@@ -5,6 +5,7 @@
 
 如果有新增角色也請放進Assets/Resources/Characters中
 
+
 4.根據以下連結在VS安裝interop.SpeechLib.dll
 
 https://dotblogs.com.tw/DavidTalk/2018/12/12/140614
@@ -17,3 +18,7 @@ https://support.microsoft.com/zh-tw/windows/%E9%99%84%E9%8C%84-a-%E6%94%AF%E6%8F
 https://blog.csdn.net/u014137602/article/details/89707076?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_default&utm_relevant_index=2
 
 7.此男聲在每台電腦item可能不同，要自行在regedit察看是幾號，並進入text_to_voice.cs中將原先的ChatbotVoice.GetVoices().Item(5)中的數字改成自己的
+
+若4~7點沒成功 會報以下錯誤
+
+![messageImage_1652533296836](https://user-images.githubusercontent.com/59390771/168429217-35d8cee0-fb63-49d5-a5fa-6530705df67c.jpeg)
