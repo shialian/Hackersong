@@ -88,4 +88,9 @@ public class Introduction : MonoBehaviour
     {
         textIndex += next;
     }
+
+    public void ResetSubtitle()
+    {
+        vrSubTitle.text = "請點選茶桌上的茶具";
+    }
 }

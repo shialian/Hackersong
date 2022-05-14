@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Canvas vrCanvas;
+    public Transform vrCamera;
 
     private void Start()
     {

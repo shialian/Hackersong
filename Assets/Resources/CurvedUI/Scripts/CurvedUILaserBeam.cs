@@ -39,6 +39,7 @@ namespace CurvedUI
                 hitTransform = null;
                 if (Physics.Raycast(myRay, out hit, length, CurvedUIInputModule.Instance.RaycastLayerMask))
                 {
+                    Debug.Log(hit.collider);
                     length = Vector3.Distance(hit.point, this.transform.position);
                     laserHit = true;
                     hitTransform = hit.transform;
