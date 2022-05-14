@@ -17,6 +17,3 @@ https://blog.csdn.net/u014137602/article/details/89707076?spm=1001.2101.3001.665
 
 7. 此男聲在每台電腦item可能不同，要自行在regedit察看是幾號，並進入text_to_voice.cs中將原先的ChatbotVoice.GetVoices().Item(5)中的數字改成自己的
 
-若4~7點沒成功 會報以下錯誤
-
-![messageImage_1652533296836](https://user-images.githubusercontent.com/59390771/168429217-35d8cee0-fb63-49d5-a5fa-6530705df67c.jpeg)
