@@ -17,7 +17,7 @@ public class text_to_voice : MonoBehaviour
     public void Speak()
     {
         SpVoice voice = new SpVoice();
-        voice.Voice = voice.GetVoices().Item(5);
+        voice.Voice = voice.GetVoices().Item(3);
         voice.Speak(sentence);
     }
 
