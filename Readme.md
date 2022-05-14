@@ -15,3 +15,5 @@ https://support.microsoft.com/zh-tw/windows/%E9%99%84%E9%8C%84-a-%E6%94%AF%E6%8F
 
 6.win + R 輸入regedit 再根據以下連結去新增Zhiwei繁體男聲，即可得繁體文字轉語音機器人聲
 https://blog.csdn.net/u014137602/article/details/89707076?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.pc_relevant_default&utm_relevant_index=2
+
+7.此男聲在每台電腦item可能不同，要自行在regedit察看是幾號，並進入text_to_voice.cs中將原先的ChatbotVoice.GetVoices().Item(5)中的數字改成自己的
