@@ -7,11 +7,9 @@
 
 
 4. 根據以下連結在VS安裝interop.SpeechLib.dll
-
 https://dotblogs.com.tw/DavidTalk/2018/12/12/140614
 
 5. 根據以下連結去下載Zhiwei繁體男聲
-
 https://support.microsoft.com/zh-tw/windows/%E9%99%84%E9%8C%84-a-%E6%94%AF%E6%8F%B4%E7%9A%84%E8%AA%9E%E8%A8%80%E5%92%8C%E8%AA%9E%E9%9F%B3-4486e345-7730-53da-fcfe-55cc64300f01
 
 6. win + R 輸入regedit 再根據以下連結去新增Zhiwei繁體男聲，即可得繁體文字轉語音機器人聲
