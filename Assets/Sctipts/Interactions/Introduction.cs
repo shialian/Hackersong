@@ -15,11 +15,14 @@ public class Introduction : MonoBehaviour
     private string[] lines;
     private string defaultTitle = "請點選茶桌上的茶具";
 
+    public Image image;
+
     private void Start()
     {
         Instance = this;
         GetIntroductionTexts();
         AddIntroductions();
+        SetActivationIntroImage(false);
     }
 
     private void GetIntroductionTexts()
@@ -51,6 +54,11 @@ public class Introduction : MonoBehaviour
             }
         }
         return -1;
+    }
+
+    public void SetActivationIntroImage(bool flag)
+    {
+        image.gameObject.SetActive(flag);
     }
 
     public void ChangeIntroduceItem(string itemName)

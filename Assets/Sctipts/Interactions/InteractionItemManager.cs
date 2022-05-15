@@ -17,6 +17,7 @@ public class InteractionItemManager : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
         {
+            Introduction.Instance.SetActivationIntroImage(false);
             SetLaserBeamActiveState(true);
             ResetItemsPosition();
             Introduction.Instance.ResetSubtitle();

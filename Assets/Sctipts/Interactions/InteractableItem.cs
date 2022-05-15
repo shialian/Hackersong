@@ -44,6 +44,7 @@ public class InteractableItem : MonoBehaviour
         outline.DrawingMode = 0;
         MoveToView();
         Introduction.Instance.ChangeIntroduceItem(itemName);
+        Introduction.Instance.SetActivationIntroImage(true);
     }
 
     private void MoveToView()
