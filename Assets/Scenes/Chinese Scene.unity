@@ -1755,6 +1755,7 @@ GameObject:
   - component: {fileID: 419391011}
   - component: {fileID: 419391013}
   - component: {fileID: 419391012}
+  - component: {fileID: 419391014}
   m_Layer: 7
   m_Name: Shui Yu
   m_TagString: Untagged
@@ -2001,6 +2002,23 @@ MonoBehaviour:
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []
+--- !u!114 &419391014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419391004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
 --- !u!1 &462983793
 GameObject:
   m_ObjectHideFlags: 0
