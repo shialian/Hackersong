@@ -28,7 +28,6 @@ namespace CurvedUI
             //get direction of the controller
             Ray myRay = new Ray(this.transform.position, this.transform.forward);
 
-
             //make laser beam hit stuff it points at.
             if(LaserBeamTransform && LaserBeamDot && LaserBeamTransform.gameObject.activeSelf) {
                 //change the laser's length depending on where it hits
@@ -39,7 +38,6 @@ namespace CurvedUI
                 hitTransform = null;
                 if (Physics.Raycast(myRay, out hit, length, CurvedUIInputModule.Instance.RaycastLayerMask))
                 {
-                    Debug.Log(hit.collider);
                     length = Vector3.Distance(hit.point, this.transform.position);
                     laserHit = true;
                     hitTransform = hit.transform;

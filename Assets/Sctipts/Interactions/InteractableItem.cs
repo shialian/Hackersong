@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using EPOOutline;
 
 public class InteractableItem : MonoBehaviour
@@ -8,13 +9,17 @@ public class InteractableItem : MonoBehaviour
     public string itemName;
     public float viewDistance;
     public Vector3 offset;
-    public Outlinable outline;
+    public Sprite image;
     private Vector3 originPosition;
     private Quaternion originRotation;
+    private Outlinable outline;
 
     public Transform[] subobjects;
     private Vector3[] originSubObjectPosition;
     private Quaternion[] originSubObjectRotation;
+
+    public QuestType questType;
+    public Vector3 targetPosition;
 
     private void Awake()
     {
@@ -40,11 +45,25 @@ public class InteractableItem : MonoBehaviour
 
     public void OnPointerClick()
     {
-        InteractionItemManager.instance.SetLaserBeamActiveState(false);
-        outline.DrawingMode = 0;
-        MoveToView();
-        Introduction.Instance.ChangeIntroduceItem(itemName);
-        Introduction.Instance.SetActivationIntroImage(true);
+        if (InteractionItemManager.instance.onInteraction == false)
+        {
+            if(questType == QuestType.QuestItem)
+            {
+                Quest.instance.ItemFound();
+                questType = QuestType.None;
+                transform.localPosition = targetPosition;
+                originPosition = transform.position;
+            }
+            else
+            {
+                InteractionItemManager.instance.onInteraction = true;
+                InteractionItemManager.instance.SetLaserBeamActiveState(false);
+                SetOutlineable(0);
+                MoveToView();
+                Introduction.instance.ChangeIntroduceItem(itemName, image, questType);
+                Introduction.instance.SetActivationIntroImage(true);
+            }
+        }
     }
 
     private void MoveToView()
@@ -55,7 +74,10 @@ public class InteractableItem : MonoBehaviour
 
     public void OnPointerEnter()
     {
-        outline.enabled = true;
+        if (InteractionItemManager.instance.onInteraction == false)
+        {
+            outline.enabled = true;
+        }
     }
 
     public void OnPointerExit()
@@ -63,7 +85,13 @@ public class InteractableItem : MonoBehaviour
         outline.enabled = false;
     }
 
-    public void MoveBack()
+    public void ResetItem()
+    {
+        MoveBack();
+        SetOutlineable(OutlinableDrawingMode.Normal);
+    }
+
+    private void MoveBack()
     {
         if (transform.position != originPosition)
         {
@@ -78,5 +106,10 @@ public class InteractableItem : MonoBehaviour
                 subobjects[i].rotation = originSubObjectRotation[i];
             }
         }
+    }
+
+    private void SetOutlineable(OutlinableDrawingMode mode)
+    {
+        outline.DrawingMode = mode;
     }
 }

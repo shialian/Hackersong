@@ -7,6 +7,7 @@ public class InteractionItemManager : MonoBehaviour
     public static InteractionItemManager instance;
     public InteractableItem[] items;
     public GameObject laserBeam;
+    public bool onInteraction;
 
     private void Start()
     {
@@ -15,20 +16,29 @@ public class InteractionItemManager : MonoBehaviour
 
     private void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch) && onInteraction)
         {
-            Introduction.Instance.SetActivationIntroImage(false);
-            SetLaserBeamActiveState(true);
-            ResetItemsPosition();
-            Introduction.Instance.ResetSubtitle();
+            ResetInroductions();
         }
+    }
+
+    public void ResetInroductions()
+    {
+        onInteraction = false;
+        Introduction.instance.SetActivationIntroImage(false);
+        SetLaserBeamActiveState(true);
+        ResetItemsPosition();
+        Introduction.instance.ResetSubtitle();
     }
 
     public void ResetItemsPosition()
     {
         for(int i = 0; i < items.Length; i++)
         {
-            items[i].MoveBack();
+            if (items[i].questType != QuestType.QuestItem)
+            {
+                items[i].ResetItem();
+            }
         }
     }
 
