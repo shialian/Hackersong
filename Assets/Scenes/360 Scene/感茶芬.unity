@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 217139479}
+  audio: {fileID: 0}
   delaytime: 5
 --- !u!114 &217139481
 MonoBehaviour:
@@ -242,9 +243,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 217139481}
-        m_TargetAssemblyTypeName: text_to_voice, Assembly-CSharp
-        m_MethodName: InvokeSpeak
+      - m_Target: {fileID: 271192306}
+        m_TargetAssemblyTypeName: PlayVoices, Assembly-CSharp
+        m_MethodName: PlayVoice12
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -257,42 +258,6 @@ MonoBehaviour:
       - m_Target: {fileID: 909717496}
         m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
         m_MethodName: disappear
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 700945088}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3704617520925890083}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1549273926}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -654,6 +619,8 @@ GameObject:
   - component: {fileID: 271192305}
   - component: {fileID: 271192304}
   - component: {fileID: 271192303}
+  - component: {fileID: 271192307}
+  - component: {fileID: 271192306}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -726,6 +693,137 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 318.185, z: 0}
+--- !u!114 &271192306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271192302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482b90859ea798542b939a9bc60b5b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voice1: {fileID: 8300000, guid: 2b64ca09f3f473a4cb4fa9491afce9fd, type: 3}
+  voice2: {fileID: 8300000, guid: 5fc842030d4c56f45917450b346dd768, type: 3}
+  voice3: {fileID: 8300000, guid: 21a3e7f74e2b9a240b32d67ba0268027, type: 3}
+  voice4: {fileID: 8300000, guid: ec767a039265c6d46bafb68f100e963c, type: 3}
+  voice5: {fileID: 8300000, guid: 4661b28889b02804dbbc45dbf54fe5cc, type: 3}
+  voice6: {fileID: 8300000, guid: a5a95fbbc330f514c941b2a7808b8fec, type: 3}
+  voice7: {fileID: 8300000, guid: 088c47258ec93754f882413716cededb, type: 3}
+  voice8: {fileID: 8300000, guid: 6d2fef7f08e4c214aacaf44670eb1aad, type: 3}
+  voice9: {fileID: 8300000, guid: c34b03e6add62754ea1c3ac8e94ddf04, type: 3}
+  voice10: {fileID: 8300000, guid: 235859c0c9ecdc24b8325c1d886770bf, type: 3}
+  voice11: {fileID: 8300000, guid: faa73e2316588cf469b1f37ea09fe97d, type: 3}
+  voice12: {fileID: 8300000, guid: e3241efe5cd8c4a489f3d1968ae708ce, type: 3}
+  chatframe: {fileID: 1818753274}
+  button1_1: {fileID: 2126772415}
+  button1_2: {fileID: 326140721}
+  button2_1: {fileID: 1530486790}
+  button2_2: {fileID: 821140522}
+  button3: {fileID: 2136677417}
+  button4_1: {fileID: 217139479}
+  button4_2: {fileID: 970161217}
+  button5: {fileID: 1549273924}
+  blackboard: {fileID: 3704617520925890082}
+  commentboard: {fileID: 700945086}
+--- !u!82 &271192307
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271192302}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &326140721
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 326140721}
+  audio: {fileID: 8300000, guid: 2b64ca09f3f473a4cb4fa9491afce9fd, type: 3}
   delaytime: 1
 --- !u!114 &326140725
 MonoBehaviour:
@@ -853,9 +952,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 326140723}
-        m_TargetAssemblyTypeName: text_to_voice, Assembly-CSharp
-        m_MethodName: InvokeSpeak
+      - m_Target: {fileID: 271192306}
+        m_TargetAssemblyTypeName: PlayVoices, Assembly-CSharp
+        m_MethodName: PlayVoice2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1280,6 +1379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 461618682}
+  audio: {fileID: 0}
   delaytime: 0
 --- !u!114 &461618686
 MonoBehaviour:
@@ -1337,33 +1437,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 461618684}
-        m_TargetAssemblyTypeName: text_to_voice, Assembly-CSharp
-        m_MethodName: InvokeSpeak
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2126772416}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 326140724}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
+      - m_Target: {fileID: 271192306}
+        m_TargetAssemblyTypeName: PlayVoices, Assembly-CSharp
+        m_MethodName: PlayVoice1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1492,6 +1568,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eb28824ef2be64f42ad1b715d8ec1aaa, type: 3}
       propertyPath: m_Name
       value: 049_Ken
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb28824ef2be64f42ad1b715d8ec1aaa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb28824ef2be64f42ad1b715d8ec1aaa, type: 3}
@@ -1734,7 +1814,7 @@ RectTransform:
   - {fileID: 700945087}
   - {fileID: 1549273925}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -41.776, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1969,7 +2049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &700945087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2008,6 +2088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 700945086}
+  audio: {fileID: 0}
   delaytime: 0.5
 --- !u!114 &700945089
 MonoBehaviour:
@@ -2117,6 +2198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 821140522}
+  audio: {fileID: 8300000, guid: 21a3e7f74e2b9a240b32d67ba0268027, type: 3}
   delaytime: 6.5
 --- !u!114 &821140526
 MonoBehaviour:
@@ -2186,21 +2268,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 821140524}
-        m_TargetAssemblyTypeName: text_to_voice, Assembly-CSharp
-        m_MethodName: InvokeManySpeak_Part1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2136677420}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
+      - m_Target: {fileID: 271192306}
+        m_TargetAssemblyTypeName: PlayVoices, Assembly-CSharp
+        m_MethodName: PlayVoice4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2492,7 +2562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &909717495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2525,6 +2595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 909717494}
+  audio: {fileID: 0}
   delaytime: 0
 --- !u!328 &909717497
 VideoPlayer:
@@ -2648,6 +2719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 939367123}
+  audio: {fileID: 8300000, guid: 5fc842030d4c56f45917450b346dd768, type: 3}
   delaytime: 0
 --- !u!114 &939367126
 MonoBehaviour:
@@ -2757,6 +2829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 970161217}
+  audio: {fileID: 0}
   delaytime: 5
 --- !u!114 &970161221
 MonoBehaviour:
@@ -2826,9 +2899,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 970161219}
-        m_TargetAssemblyTypeName: text_to_voice, Assembly-CSharp
-        m_MethodName: InvokeSpeak
+      - m_Target: {fileID: 271192306}
+        m_TargetAssemblyTypeName: PlayVoices, Assembly-CSharp
+        m_MethodName: PlayVoice12
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2841,42 +2914,6 @@ MonoBehaviour:
       - m_Target: {fileID: 909717496}
         m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
         m_MethodName: disappear
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 700945088}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3704617520925890083}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1549273926}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3618,6 +3655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 068_Syun_no-rig-free
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fedf9ab48c88e75408b51df6c272c8c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fedf9ab48c88e75408b51df6c272c8c8, type: 3}
 --- !u!1 &1530486790
@@ -3655,6 +3696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1530486790}
+  audio: {fileID: 8300000, guid: 21a3e7f74e2b9a240b32d67ba0268027, type: 3}
   delaytime: 6.5
 --- !u!114 &1530486792
 MonoBehaviour:
@@ -3739,21 +3781,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1530486792}
-        m_TargetAssemblyTypeName: text_to_voice, Assembly-CSharp
-        m_MethodName: InvokeManySpeak_Part1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2136677420}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
+      - m_Target: {fileID: 271192306}
+        m_TargetAssemblyTypeName: PlayVoices, Assembly-CSharp
+        m_MethodName: PlayVoice4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3890,6 +3920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1549273924}
+  audio: {fileID: 0}
   delaytime: 5
 --- !u!114 &1549273927
 MonoBehaviour:
@@ -4103,6 +4134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rp_dennis_posed_004_30k
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1a3e6cabfa7dd9a48a389b7c4ce970fd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a3e6cabfa7dd9a48a389b7c4ce970fd, type: 3}
 --- !u!1 &1656466828
@@ -4305,6 +4340,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0231a841d19e4c748be8a12268a0b179, type: 3}
       propertyPath: m_Name
       value: 018_Kana_no-rig-free
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0231a841d19e4c748be8a12268a0b179, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0231a841d19e4c748be8a12268a0b179, type: 3}
@@ -4701,33 +4740,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1818461712}
-        m_TargetAssemblyTypeName: text_to_voice, Assembly-CSharp
-        m_MethodName: InvokeSpeak
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1530486791}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 821140525}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
+      - m_Target: {fileID: 271192306}
+        m_TargetAssemblyTypeName: PlayVoices, Assembly-CSharp
+        m_MethodName: PlayVoice3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4993,6 +5008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sapphiart@idle
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: db3a67833b7ae054e93291cc21d57f50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: db3a67833b7ae054e93291cc21d57f50, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5051,6 +5070,79 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db3a67833b7ae054e93291cc21d57f50, type: 3}
+--- !u!1001 &1953989829
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.66014105
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.25340438
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.25340438
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.66014105
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_Name
+      value: book
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 009b9f48a477a2a4ab577cb2c1cf61fe, type: 3}
 --- !u!1 &2003923476
 GameObject:
   m_ObjectHideFlags: 0
@@ -5185,6 +5277,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003923476}
   m_CullTransparentMesh: 1
+--- !u!1 &2048314085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2048314087}
+  - component: {fileID: 2048314086}
+  m_Layer: 0
+  m_Name: screenshot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2048314086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048314085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fca1d18232c44c48a43a2fd5d7bcb4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2048314087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048314085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -824.39526, y: -112.82524, z: 396.58044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105965340
 GameObject:
   m_ObjectHideFlags: 0
@@ -5249,7 +5384,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2126772415
 GameObject:
@@ -5286,6 +5421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 2126772415}
+  audio: {fileID: 8300000, guid: 2b64ca09f3f473a4cb4fa9491afce9fd, type: 3}
   delaytime: 1
 --- !u!114 &2126772417
 MonoBehaviour:
@@ -5358,9 +5494,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2126772417}
-        m_TargetAssemblyTypeName: text_to_voice, Assembly-CSharp
-        m_MethodName: InvokeSpeak
+      - m_Target: {fileID: 271192306}
+        m_TargetAssemblyTypeName: PlayVoices, Assembly-CSharp
+        m_MethodName: PlayVoice2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5537,6 +5673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 2136677417}
+  audio: {fileID: 8300000, guid: a5a95fbbc330f514c941b2a7808b8fec, type: 3}
   delaytime: 4
 --- !u!114 &2136677421
 MonoBehaviour:
@@ -5594,33 +5731,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2136677419}
-        m_TargetAssemblyTypeName: text_to_voice, Assembly-CSharp
-        m_MethodName: InvokeManySpeak_Part2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 217139480}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 970161220}
-        m_TargetAssemblyTypeName: Show_or_not, Assembly-CSharp
-        m_MethodName: InvokeShow
+      - m_Target: {fileID: 271192306}
+        m_TargetAssemblyTypeName: PlayVoices, Assembly-CSharp
+        m_MethodName: PlayVoice7
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8403,7 +8516,7 @@ Transform:
   - {fileID: 2141291808584490341}
   - {fileID: 5953860012900490023}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 169.457, z: 0}
 --- !u!137 &3073557026872133299
 SkinnedMeshRenderer:
@@ -8838,7 +8951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3704617520925890083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8852,6 +8965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 3704617520925890082}
+  audio: {fileID: 0}
   delaytime: 0.5
 --- !u!1 &3734957239008742404
 GameObject:
@@ -9117,7 +9231,7 @@ Transform:
   m_LocalScale: {x: 90, y: 180, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 141.133, z: 0}
 --- !u!4 &4063420045076961400
 Transform:
