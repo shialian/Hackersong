@@ -18,6 +18,9 @@ public class Introduction : MonoBehaviour
     public Image image;
     private bool questTriggered;
 
+    public AudioClip defaultClip;
+    private AudioClip[] currentClips;
+
     private void Start()
     {
         instance = this;
@@ -63,14 +66,22 @@ public class Introduction : MonoBehaviour
         image.gameObject.SetActive(flag);
     }
 
-    public void ChangeIntroduceItem(string itemName, Sprite sprite, QuestType questType)
+    public void ChangeIntroduceItem(string itemName, Sprite sprite, QuestType questType, AudioClip[] clips=null)
     {
         SetActivationIntroImage(true);
         image.sprite = sprite;
         currentText = introductions[itemName].Split('¡A','¡F');
         textIndex = 0;
-        ChangeSubtitle();
-        if(questType == QuestType.TriggerItem)
+        if (clips.Length > 0)
+        {
+            currentClips = clips;
+            NextIntroduction(currentClips);
+        }
+        else
+        {
+            NextIntroduction();
+        }
+        if(questType == QuestType.TriggerItem && Quest.instance.finish == false)
         {
             questTriggered = true;
         }
@@ -83,7 +94,7 @@ public class Introduction : MonoBehaviour
             if(textIndex < currentText.Length - 1)
             {
                 SetNextTextIndex(1);
-                ChangeSubtitle();
+                NextIntroduction(currentClips);
             }
             else if (questTriggered)
             {
@@ -96,8 +107,17 @@ public class Introduction : MonoBehaviour
             if (textIndex > 0)
             {
                 SetNextTextIndex(-1);
-                ChangeSubtitle();
+                NextIntroduction(currentClips);
             }
+        }
+    }
+
+    private void NextIntroduction(AudioClip[] clips=null)
+    {
+        ChangeSubtitle();
+        if (clips != null)
+        {
+            Dialogue.instance.PlayClip(clips[textIndex]);
         }
     }
 
@@ -114,5 +134,11 @@ public class Introduction : MonoBehaviour
     public void ResetSubtitle()
     {
         vrSubTitle.text = defaultTitle;
+    }
+
+    public void ResetAudioClips()
+    {
+        currentClips = null;
+        Dialogue.instance.PlayClip(defaultClip);
     }
 }

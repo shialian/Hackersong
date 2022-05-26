@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Canvas vrCanvas;
     public Transform vrCamera;
+    public AudioClip clip;
 
     private void Start()
     {
@@ -23,5 +24,6 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
         vrCanvas.gameObject.SetActive(true);
+        Dialogue.instance.PlayClip(clip);
     }
 }

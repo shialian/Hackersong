@@ -21,6 +21,8 @@ public class InteractableItem : MonoBehaviour
     public QuestType questType;
     public Vector3 targetPosition;
 
+    public AudioClip[] clips;
+
     private void Awake()
     {
         originPosition = transform.position;
@@ -60,7 +62,14 @@ public class InteractableItem : MonoBehaviour
                 InteractionItemManager.instance.SetLaserBeamActiveState(false);
                 SetOutlineable(0);
                 MoveToView();
-                Introduction.instance.ChangeIntroduceItem(itemName, image, questType);
+                if (clips.Length > 0)
+                {
+                    Introduction.instance.ChangeIntroduceItem(itemName, image, questType, clips);
+                }
+                else
+                {
+                    Introduction.instance.ChangeIntroduceItem(itemName, image, questType, clips);
+                }
                 Introduction.instance.SetActivationIntroImage(true);
             }
         }

@@ -22,7 +22,9 @@ public class Quest : MonoBehaviour
     private string[] lines;
     private int itemFoundAmount;
     private int textIndex;
-    private bool finish;
+    public bool finish;
+
+    public AudioClip[] clips;
 
     private void Start()
     {
@@ -48,10 +50,12 @@ public class Quest : MonoBehaviour
             if (finish)
             {
                 textIndex = Mathf.Min(textIndex, 5);
+                Dialogue.instance.PlayClip(clips[textIndex]);
             }
             else
             {
                 textIndex = Mathf.Min(2, textIndex);
+                Dialogue.instance.PlayClip(clips[textIndex]);
             }
             vrSubtitle.text = lines[textIndex];
             if (textIndex == 5)
@@ -87,6 +91,7 @@ public class Quest : MonoBehaviour
     {
         itemFoundAmount++;
         textIndex++;
+        Dialogue.instance.PlayClip(clips[textIndex]);
         vrSubtitle.text = lines[textIndex];
         if(itemFoundAmount == questItems.Length)
         {
