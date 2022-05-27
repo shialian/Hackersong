@@ -28,8 +28,7 @@ public class InteractionItemManager : MonoBehaviour
         Introduction.instance.SetActivationIntroImage(false);
         SetLaserBeamActiveState(true);
         ResetItemsPosition();
-        Introduction.instance.ResetSubtitle();
-        Introduction.instance.ResetAudioClips();
+        Introduction.instance.ResetAll();
     }
 
     public void ResetItemsPosition()

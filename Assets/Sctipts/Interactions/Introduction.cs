@@ -18,6 +18,8 @@ public class Introduction : MonoBehaviour
     public Image image;
     private bool questTriggered;
 
+    public Animator fujunAnim;
+
     public AudioClip defaultClip;
     private AudioClip[] currentClips;
 
@@ -68,6 +70,7 @@ public class Introduction : MonoBehaviour
 
     public void ChangeIntroduceItem(string itemName, Sprite sprite, QuestType questType, AudioClip[] clips=null)
     {
+        fujunAnim.SetBool("On Introduction", true);
         SetActivationIntroImage(true);
         image.sprite = sprite;
         currentText = introductions[itemName].Split('¡A','¡F');
@@ -131,14 +134,26 @@ public class Introduction : MonoBehaviour
         textIndex += next;
     }
 
-    public void ResetSubtitle()
+    public void ResetAll()
+    {
+        ResetSubtitle();
+        ResetAudioClips();
+        ResetAnimation();
+    }
+
+    private void ResetSubtitle()
     {
         vrSubTitle.text = defaultTitle;
     }
 
-    public void ResetAudioClips()
+    private void ResetAudioClips()
     {
         currentClips = null;
         Dialogue.instance.PlayClip(defaultClip);
+    }
+
+    private void ResetAnimation()
+    {
+        fujunAnim.SetBool("On Introduction", false);
     }
 }

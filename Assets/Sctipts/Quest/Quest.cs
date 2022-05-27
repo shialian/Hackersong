@@ -24,6 +24,8 @@ public class Quest : MonoBehaviour
     private int textIndex;
     public bool finish;
 
+    public Animator fujunAnim;
+
     public AudioClip[] clips;
 
     private void Start()
@@ -56,6 +58,10 @@ public class Quest : MonoBehaviour
             {
                 textIndex = Mathf.Min(2, textIndex);
                 Dialogue.instance.PlayClip(clips[textIndex]);
+                if(textIndex == 2)
+                {
+                    fujunAnim.SetTrigger("Quest Start");
+                }
             }
             vrSubtitle.text = lines[textIndex];
             if (textIndex == 5)
@@ -96,6 +102,7 @@ public class Quest : MonoBehaviour
         if(itemFoundAmount == questItems.Length)
         {
             finish = true;
+            fujunAnim.SetTrigger("Quest End");
         }
     }
 }
