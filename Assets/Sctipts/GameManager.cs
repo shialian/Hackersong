@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        vrCanvas.gameObject.SetActive(true);
-        Dialogue.instance.PlayClip(clip);
+        //vrCanvas.gameObject.SetActive(true);
+        //Dialogue.instance.PlayClip(clip);
     }
 }

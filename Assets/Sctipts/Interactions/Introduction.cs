@@ -117,11 +117,11 @@ public class Introduction : MonoBehaviour
 
     private void NextIntroduction(AudioClip[] clips=null)
     {
-        ChangeSubtitle();
-        if (clips != null)
-        {
-            Dialogue.instance.PlayClip(clips[textIndex]);
-        }
+        //ChangeSubtitle();
+        //if (clips != null)
+        //{
+        //    Dialogue.instance.PlayClip(clips[textIndex]);
+        //}
     }
 
     private void ChangeSubtitle()
